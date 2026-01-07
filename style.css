@@ -41,13 +41,17 @@
 body {
   font-family: "Overpass", sans-serif;
   /* background-color: var(--c-black); */
+  padding-inline: var(--spacing-300);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
+.container {
+  background: linear-gradient(180deg, var(--c-gradient-1) 0%, var(--c-gradient-2) 100%);
+  padding: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
+}
 
 
 

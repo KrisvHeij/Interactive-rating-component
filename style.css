@@ -11,6 +11,24 @@
   }
 }
 
+@layer spacing {
+  :root {
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
+    --spacing-1300: 6.5rem;
+    --spacing-1700: 8.5rem;
+  }
+}
+
+/* font weights
+  regular: 400
+  semibold: 600
+  bold: 700
+*/
+
 *,
 *::after,
 *::before {
@@ -21,7 +39,12 @@
 
 /* Main styling */
 body {
-  
+  font-family: "Overpass", sans-serif;
+  /* background-color: var(--c-black); */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

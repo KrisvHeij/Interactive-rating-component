@@ -56,6 +56,7 @@ body {
 .container {
   background: linear-gradient(180deg, var(--c-gradient-1) 0%, var(--c-gradient-2) 100%);
   padding: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
+  border-radius: 0.9375rem;
 }
 
 .content-img {
@@ -87,13 +88,33 @@ body {
 
 form {
   display: flex;
+  justify-content: space-between;
 }
 
+.form-group label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(2.625rem, calc(2.088rem + 2.29vw), 3.188rem);
+  height: clamp(2.625rem, calc(2.088rem + 2.29vw), 3.188rem);
+  margin-block-end: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
+  color: var(--c-grey-500);
+  background-color: var(--c-grey-900);
+  border-radius: 50%;
+}
 
+.form-group label,
+.form-group * {
+  cursor: pointer;
+}
 
-
-
-input {
+.sr-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
   position: absolute;
-  opacity: 0;
+  white-space: nowrap; 
+  width: 1px;
 }
+

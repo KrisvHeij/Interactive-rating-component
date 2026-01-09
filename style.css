@@ -89,6 +89,7 @@ body {
 form {
   display: flex;
   justify-content: space-between;
+  margin-block-end: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
 }
 
 .form-group label {
@@ -97,7 +98,6 @@ form {
   align-items: center;
   width: clamp(2.625rem, calc(2.088rem + 2.29vw), 3.188rem);
   height: clamp(2.625rem, calc(2.088rem + 2.29vw), 3.188rem);
-  margin-block-end: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
   color: var(--c-grey-500);
   background-color: var(--c-grey-900);
   border-radius: 50%;
@@ -118,3 +118,18 @@ form {
   width: 1px;
 }
 
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding-block: var(--spacing-200);
+  padding-inline: var(--spacing-1300);
+  background-color: var(--c-orange);
+  color: var(--c-grey-950);
+  border: none;
+  border-radius: 1.40625rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.125rem;
+  letter-spacing: 1.87px;
+}

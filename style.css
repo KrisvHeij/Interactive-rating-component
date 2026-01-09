@@ -54,8 +54,10 @@ body {
 }
 
 .container {
+  max-width: 26rem;
   background: linear-gradient(180deg, var(--c-gradient-1) 0%, var(--c-gradient-2) 100%);
-  padding: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
+  padding-block: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
+  padding-inline: 1.5rem;
   border-radius: 0.9375rem;
 }
 
@@ -101,6 +103,7 @@ form {
   color: var(--c-grey-500);
   background-color: var(--c-grey-900);
   border-radius: 50%;
+  transition: background-color 250ms ease, color 250ms ease;
 }
 
 .form-group label,
@@ -127,9 +130,31 @@ form {
   color: var(--c-grey-950);
   border: none;
   border-radius: 1.40625rem;
+  /* outline: 1px solid var(--c-orange); */
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.125rem;
   letter-spacing: 1.87px;
+  cursor: pointer;
+  transition: transform 250ms ease;
+}
+
+/* Hover & active states */
+.form-group label:hover,
+.submit-btn:hover {
+  background-color: var(--c-white);
+}
+
+.form-group label:has(input:checked) {
+  color: var(--c-grey-900);
+  background-color: var(--c-orange);
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+}
+
+.visually-hidden {
+  display: none;
 }

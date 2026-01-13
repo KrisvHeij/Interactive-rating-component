@@ -80,7 +80,7 @@ body {
   line-height: 1.25;
 }
 
-.content-container p {
+.content-container p:first-of-type {
   margin-block-end: 1rem;
   color: var(--c-grey-500);
   font-size: clamp(0.875rem, calc(0.815rem + 0.254vw), 0.9375rem);
@@ -153,6 +153,14 @@ form {
 
 .submit-btn:active {
   transform: scale(0.95);
+}
+
+/* Error message */
+.error-msg {
+  margin-block-start: 1rem;
+  margin-block-end: 0;
+  text-align: center;
+  color: var(--c-orange);
 }
 
 /* Thanks container */

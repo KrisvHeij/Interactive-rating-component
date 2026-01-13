@@ -3,32 +3,59 @@ const radioBtns = document.querySelectorAll("input[type=radio]");
 const contentContainer = document.querySelector(".content-container");
 const thanksContainer = document.querySelector(".thanks-container");
 const ratingElement = document.getElementById("rating");
+const form = document.querySelector("form");
+const errorMessage = document.querySelector(".error-msg");
 
 let ratingValue = null;
 
+// Reset app
+function reset() {
+  ratingValue = null;
+
+  for (let i = 0; i < radioBtns.length; i++) {
+    radioBtns[i].checked = false;
+  }
+}
+
+// Show/hide errro message
+function showHideError() {
+  if (ratingValue === null) {
+    errorMessage.classList.remove("visually-hidden");
+  } else {
+    errorMessage.classList.add("visually-hidden");
+  }
+}
+
+// Handle selected rating
 function handleSubmit() {
   for (let i = 0; i < radioBtns.length; i++) {
     if (radioBtns[i].checked === true) {
       ratingValue = radioBtns[i].value;
+      showHideError();
     }
   }
-  
-  showThanksContainer();
 }
 
+// Show thank you container
 function showThanksContainer() {
-  ratingElement.textContent = ratingValue;
-  contentContainer.classList.add("visually-hidden");
-  thanksContainer.classList.remove("visually-hidden");
+  if (ratingValue === null) {
+    showHideError();
+    return;
+  } else {
+    errorMessage.classList.add("visually-hidden");
+    ratingElement.textContent = ratingValue;
+    contentContainer.classList.add("visually-hidden");
+    thanksContainer.classList.remove("visually-hidden");
 
-  setTimeout(() => {
-    contentContainer.classList.toggle("visually-hidden");
-    thanksContainer.classList.toggle("visually-hidden");
-  }, 5000)
+    setTimeout(() => {
+      contentContainer.classList.toggle("visually-hidden");
+      thanksContainer.classList.toggle("visually-hidden");
+      reset();
+    }, 5000)
+  }
+  
 }
 
-
-submitBtn.addEventListener("click", handleSubmit);
-
-// Add error message when no rating is selected
-// Add reset function
+// Event Listeners
+form.addEventListener("change", handleSubmit)
+submitBtn.addEventListener("click", showThanksContainer);

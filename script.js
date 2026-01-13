@@ -8,7 +8,6 @@ const errorMessage = document.querySelector(".error-msg");
 
 let ratingValue = null;
 
-// Reset app
 function reset() {
   ratingValue = null;
 
@@ -17,7 +16,7 @@ function reset() {
   }
 }
 
-// Show/hide errro message
+// Show/hide error message
 function showHideError() {
   if (ratingValue === null) {
     errorMessage.classList.remove("visually-hidden");

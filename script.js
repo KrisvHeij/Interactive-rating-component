@@ -45,12 +45,14 @@ function showThanksContainer() {
     ratingElement.textContent = ratingValue;
     contentContainer.classList.add("visually-hidden");
     thanksContainer.classList.remove("visually-hidden");
+    thanksContainer.ariaHidden = "false";
 
     setTimeout(() => {
       contentContainer.classList.toggle("visually-hidden");
       thanksContainer.classList.toggle("visually-hidden");
+      thanksContainer.ariaHidden = "true";
       reset();
-    }, 5000)
+    }, 10000)
   }
 }
 

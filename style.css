@@ -41,7 +41,7 @@ body {
   font-family: "Overpass", sans-serif;
   background-color: var(--c-black);
   padding-inline: var(--spacing-300);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,4 +201,11 @@ body {
 
 .visually-hidden {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit-btn,
+  .form-group label {
+    transition: none;
+  }
 }

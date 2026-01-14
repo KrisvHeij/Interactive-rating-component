@@ -31,9 +31,9 @@ function handleSubmit() {
   for (let i = 0; i < radioBtns.length; i++) {
     if (radioBtns[i].checked === true) {
       ratingValue = radioBtns[i].value;
-      showHideError();
     }
   }
+  showHideError();
 }
 
 // Show thank you container
@@ -46,12 +46,12 @@ function showThanksContainer() {
     ratingElement.textContent = ratingValue;
     contentContainer.classList.add("visually-hidden");
     thanksContainer.classList.remove("visually-hidden");
-    thanksContainer.ariaHidden = false;
+    thanksContainer.setAttribute("aria-hidden", "false");
 
     setTimeout(() => {
       contentContainer.classList.toggle("visually-hidden");
       thanksContainer.classList.toggle("visually-hidden");
-      thanksContainer.ariaHidden = true;
+      thanksContainer.setAttribute("aria-hidden", "true");
       reset();
     }, 10000)
   }

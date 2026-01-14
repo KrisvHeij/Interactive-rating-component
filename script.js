@@ -19,9 +19,10 @@ function reset() {
 // Show/hide error message
 function showHideError() {
   if (ratingValue === null) {
-    errorMessage.classList.remove("visually-hidden");
+    errorMessage.hidden = false;
+    errorMessage.focus();
   } else {
-    errorMessage.classList.add("visually-hidden");
+    errorMessage.hidden = true;
   }
 }
 
@@ -41,16 +42,16 @@ function showThanksContainer() {
     showHideError();
     return;
   } else {
-    errorMessage.classList.add("visually-hidden");
+    errorMessage.hidden = true;
     ratingElement.textContent = ratingValue;
     contentContainer.classList.add("visually-hidden");
     thanksContainer.classList.remove("visually-hidden");
-    thanksContainer.ariaHidden = "false";
+    thanksContainer.ariaHidden = false;
 
     setTimeout(() => {
       contentContainer.classList.toggle("visually-hidden");
       thanksContainer.classList.toggle("visually-hidden");
-      thanksContainer.ariaHidden = "true";
+      thanksContainer.ariaHidden = true;
       reset();
     }, 10000)
   }

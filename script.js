@@ -52,9 +52,18 @@ function showThanksContainer() {
       reset();
     }, 5000)
   }
-  
 }
 
 // Event Listeners
 form.addEventListener("change", handleSubmit)
-submitBtn.addEventListener("click", showThanksContainer);
+
+const events = ["click", "keydown"];
+
+events.forEach((event) => {
+  submitBtn.addEventListener(event, (e) => {
+    if (event === "click" || e.key === "Enter") {
+      e.preventDefault();
+      showThanksContainer();
+    }
+  })
+})

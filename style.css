@@ -23,12 +23,6 @@
   }
 }
 
-/* font weights
-  regular: 400
-  semibold: 600
-  bold: 700
-*/
-
 *,
 *::after,
 *::before {
@@ -109,6 +103,10 @@ form {
 .form-group label,
 .form-group * {
   cursor: pointer;
+}
+
+.form-group label:has(input:focus-visible) {
+  outline: 1px solid var(--c-white);
 }
 
 .sr-only {

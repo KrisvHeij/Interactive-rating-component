@@ -82,7 +82,7 @@ body {
   line-height: 1.6;
 }
 
-form {
+.button-container {
   display: flex;
   justify-content: space-between;
   margin-block-end: clamp(1.5rem, calc(2.0356vw + 1.0229rem), 2rem);
